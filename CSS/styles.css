@@ -1,7 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
-
+.small-letter{
+    font-size: 16px;
+}
+.medium-letter{
+    font-size: 18px;
+}
+.big-letter{
+    font-size: 44px;
+}
+.order-letter{
+    font-size: 22px;
+}
+.white{
+    color: #fff;
+}
+.black{
+    color: #333333;
+}
+.grey{
+    color: #a6a6a6;
+}
 body{
     background: #e5e5e5;
     font-family: "Roboto";
@@ -10,7 +30,43 @@ body{
 .lightweight-font{
     font-weight: 300;
 }
-.top{
+.top-bar{
     height: 92px;
     background: #cf2b2b;
+    padding-left: 21px;
+    display: flex;
+    align-items: center; 
+    position: fixed;
+    top: 0;
+    left: 0;   
+    border-radius: 4px;
+}
+.trademark{
+    width: 226px;
+    display: flex;
+    flex-direction: column;
+}
+.menu-content{
+    background: #e5e5e5;
+    padding-left: 19px;
+}
+.food-type{
+    margin-bottom: 17px;
+    margin-top: 27px;
+    font-size: 26px;
+}
+.dish-menu, .drink-menu, .dessert-menu{
+
+}
+.bottom-bar{
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92px;
+    position: fixed;
+    left: 0;
+    border-radius: 4px;
+    top: calc(100% - 92px);
+    font-size: 20px;
 }
