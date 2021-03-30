@@ -32,6 +32,7 @@ body{
 }
 .top-bar{
     height: 92px;
+    width: 100%;
     background: #cf2b2b;
     padding-left: 21px;
     display: flex;
@@ -64,9 +65,11 @@ body{
     justify-content: center;
     align-items: center;
     height: 92px;
+    width: 100%;
     position: fixed;
     left: 0;
     border-radius: 4px;
     top: calc(100% - 92px);
     font-size: 20px;
+    background: blue;
 }
