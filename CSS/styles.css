@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+
+body{
+    background: #e5e5e5;
+    font-family: "Roboto";
+    font-weight: 400;
+}
+.lightweight-font{
+    font-weight: 300;
+}
+.top{
+    height: 92px;
+    background: #cf2b2b;
+}
