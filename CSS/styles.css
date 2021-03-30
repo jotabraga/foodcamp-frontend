@@ -57,7 +57,25 @@ body{
     font-size: 26px;
 }
 .dish-menu, .drink-menu, .dessert-menu{
-
+    height: 216px;
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+}
+.dishes, .drinks, .desserts{
+    height: 216px;
+    width: 172px;
+    border-radius: 9px;
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.dishes, .drinks, .desserts img{
+    width: 144px;
+    height: 87px;
+    border-radius: 4px;
 }
 .bottom-bar{
     background: #fff;
