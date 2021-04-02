@@ -3,7 +3,7 @@
 .righteous-letter{
     font-family: "Righteous";
 }
-.small-letter{
+.small-letter, .main-food, .price{
     font-size: 16px;
 }
 .medium-letter{
@@ -48,6 +48,7 @@ body{
     left: 0;   
     border-radius: 4px;
     z-index: 2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .trademark{
     width: 226px;
@@ -69,33 +70,40 @@ body{
     height: 216px;
     width: 100%;
     display: flex;
+    overflow-y: hidden;
 }
-.dishes, .drinks, .desserts{
+.dishes1, .dishes2, .dishes3, .dishes4, .drinks1, .drinks2, .drinks3, .drinks4, .desserts1, .desserts2, .desserts3, .desserts4{
     height: 216px;
     width: 172px;
     margin-right: 16px;
     border-radius: 9px;
     background: #fff;
     display: flex;
-    flex-wrap: wrap;
     padding-left: 14px;
+    padding-right: 14px;
+    padding-bottom: 20px;
+    padding-top: 15px;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: left;
     position: relative;
+    box-shadow: 6px 0 6px 0 rgba(0, 0, 0, 0.09), 0 8px 20px 0 rgba(0, 0, 0, 0.08);
 }
 img{
     width: 144px;
     height: 87px;
     border-radius: 4px;
 }
-ion-icon{
+.icon-check{
     font-size: 16px;
-    display: none;
     position: absolute;
     top: 185px;
     left: 144px;
     color: #32b72f;
+}
+
+.hidden{
+    display: none;
 }
 .bottom-bar{
     background: #fff;
@@ -139,5 +147,7 @@ ion-icon{
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    display: none;
+}
+.dish-selected{
+    border: 2px green solid;
 }
