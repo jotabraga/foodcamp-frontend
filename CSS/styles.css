@@ -148,6 +148,6 @@ img{
     align-items: center;
     text-align: center;
 }
-.dish-selected{
+.dish-selected, .drink-selected, .dessert-selected{
     border: 2px green solid;
 }
