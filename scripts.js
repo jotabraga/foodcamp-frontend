@@ -16,10 +16,12 @@ let cost;
 function selectdish(plate){
     
     const selected = document.querySelector(".dish-menu .dish-selected");
+    const ic = document.querySelector(".dish-selected" + " ion-icon");
     
 
     if(selected !== null){
         selected.classList.remove('dish-selected');
+        ic.classList.replace("icon-check","hidden");
     }
 
     foodchoosed = document.querySelector(plate);
@@ -34,11 +36,6 @@ function selectdish(plate){
     dishprice = bill.innerHTML
     close_order();
 }
-
-
-
-
-
 
 
 
