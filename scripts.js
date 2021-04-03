@@ -46,7 +46,6 @@ function selectdrink(beverage){
     drinkprice = bill.innerHTML
     close_order();
 }
-
 function selectdessert(sweets){ 
     const selected = document.querySelector(".dessert-menu .dessert-selected");
     const ic = document.querySelector(".dessert-selected" + " ion-icon");
@@ -77,15 +76,52 @@ function close_order(){
     }
 }
 function confirmorder(){
+    const selected = document.querySelector(".buy-buttom");
 
-    alert("teste";)
-    //const ordered = document.querySelector(".shop-buttom")
+    if(selected !== null){
+        client = prompt("Olá, informe seu nome: ");
+        adress = prompt("Agora o endereço para receber seu prato: ");
 
-    //if(ordered.classList.contains(".buy-buttom")===true){
-    //    client = prompt("Olá, informe seu nome: ");
-   //     adress = prompt("Agora o endereço para receber seu prato: ");
+        const freezed = document.querySelector('.freezed-backgroud');
+        freezed.classList.remove("hidden");
+        //const overflowed = document.querySelector('body');
+        //overflowed.classList.add("estatico");
+        
+        const plate = document.querySelector('.dishchoosed .main-food');
+        plate.innerHTML = dishtype;
+        const price-plate = document.querySelector('.plate span:nth-of-type(2)');
+        price-plate.innerHTML = 'R$ ' + price-plate;
 
-   // }
+        const drink = document.querySelector('.drinkchoosed .main-drink');
+        drink.innerHTML = drinktype;
+        const price-drink = document.querySelector('.drink span:nth-of-type(2)');
+        price-drink.innerHTML = 'R$ ' + price-drink;
+
+        const dessert = document.querySelector('.dessertchoosed .main-dessert');
+        dessert.innerHTML = desserttype;
+        const price-dessert = document.querySelector('.dessert span:nth-of-type(2)');
+        price-dessert.innerHTML = 'R$ ' + price-dessert;
+
+        const orderprice = document.querySelector('.finalprice span:nth-of-type(2)');
+        cost = Number(price-plate) + Number(price-drink) + Number(price-dessert);
+        orderprice.innerHTML = 'R$ ' + cost.toFixed(2);
+    }
+}
+function ordercancel() {
+    const embassado = document.querySelector('.fundoEmbacado');
+    embassado.classList.add("oculto");
+    const estatico = document.querySelector('body');
+    estatico.classList.remove("estatico");
+}
+function Whats_chat() {
+    const Wpp_ola = "Olá, gostaria de fazer o pedido:\n"
+    const Wpp_pedido = " - Prato: " + tipoPrato + "\n - Bebida: " + tipoBebida + "\n - Sobremesa: " + tipoSobremesa;
+    const valor_total = "\nTotal: R$ " + valor.toFixed(2);
+    const dados_cliente = "\n \nNome: " + nome + "\nEndereço: " + endereço;
+    const msg = encodeURIComponent(Wpp_ola + Wpp_pedido + valor_total + dados_cliente);
+
+    const MudarLink = document.querySelector(".confirme_pedido a");
+    MudarLink.href = MudarLink.href.replace('https://wa.me/?text=',"https://wa.me/5521993778424?text=" +  msg);
 }
 
 
@@ -102,25 +138,3 @@ function confirmorder(){
 
 
 
-
-
-
-
-/*function selecionar_pratoPrincipal(prato, tipo) {
-   
-    const selecionado = document.querySelector(".Prato_Principal .selecionado");
-    
-    if (selecionado !== null) {
-        selecionado.classList.remove("selecionado");
-    }
-
-    checkPrato = document.querySelector(prato);
-    checkPrato.classList.add("selecionado");
-
-    const Prato = document.querySelector(tipo);
-    tipoPrato = Prato.innerHTML
-
-    const Preço = document.querySelector(prato + ' .preço');
-    preçoPrato = Preço.innerHTML
-    conclusao_Pedido()
-}*/

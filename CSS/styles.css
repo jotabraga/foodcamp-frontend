@@ -142,7 +142,7 @@ img{
 .dish-selected, .drink-selected, .dessert-selected{
     border: 2px green solid;
 }
-.ask-order {
+.meal-review {
     position: fixed;
     z-index: 3;
     display: flex;
@@ -159,7 +159,7 @@ img{
     padding: 20px 10px 10px 10px;
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
 }
-.freezed-backgroung{
+.freezed-background{
     position: fixed;
     top: 0;
     left: 0;
@@ -168,3 +168,4 @@ img{
     height: 100%;
     background: rgba(255, 255, 255, 0.7);
 }
+
