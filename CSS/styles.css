@@ -134,10 +134,37 @@ img{
 }
 .buy-buttom{
     background: #32b72f;
+    font-weight: 700;
 }
 .waiting-buttom{
     background: #cbcbcb;
 }
 .dish-selected, .drink-selected, .dessert-selected{
     border: 2px green solid;
+}
+.ask-order {
+    position: fixed;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    top: calc(50% - 175px);
+    left: calc(50% - 185px);
+    width: 370px;
+    height: 350px;
+    background-color: #50D074;
+    color: #fff;
+    border-radius: 9px;
+    padding: 20px 10px 10px 10px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+}
+.freezed-backgroung{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
 }

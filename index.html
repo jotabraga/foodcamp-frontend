@@ -40,7 +40,19 @@
         </div>        
     </div>
 
-    <div class="bottom-bar"> <div class="shop-buttom waiting-buttom">Selecione os 3 itens para fechar o pedido</div> <div class="buy-buttom, hidden">Fechar pedido</div> </div>
+    <div class="bottom-bar"> <div class="shop-buttom waiting-buttom" onclick="confirmorder()">Selecione os 3 itens para fechar o pedido</div> <div class="buy-buttom, hidden">Fechar pedido</div> </div>
+
+    <div class="freezed-background hidden">
+        <strong><div>
+            <p>Confirme seu pedido</p>
+            <div class="confirme_prato"><span></span><span></span></div>
+            <div class="confirme_bebida"><span></span><span></span></div>
+            <div class="confirme_sobremesa"><span></span><span></span></div>
+            <div class="total"><span>TOTAL</span><span></span></div>
+            <a href= 'https://wa.me/?text=' target="_blank" onclick="conversa_Wpp()"><button class="tudo_certo"><span>Tudo certo, Pode pedir!</span></button></a>
+            <button class="cancelar" onclick="cancelar_Pedido()"><span>Cancelar</span></button>
+        </div></strong></div>
+    </div>
 
     
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>   

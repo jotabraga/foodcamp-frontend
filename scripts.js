@@ -7,6 +7,8 @@ let dessertprice;
 let dishtype;
 let drinktype;
 let desserttype;
+let client;
+let adress;
 let cost;
 
 function selectdish(plate){
@@ -74,6 +76,18 @@ function close_order(){
         waiting.innerHTML = "Fechar pedido";
     }
 }
+function confirmorder(){
+
+    alert("teste";)
+    //const ordered = document.querySelector(".shop-buttom")
+
+    //if(ordered.classList.contains(".buy-buttom")===true){
+    //    client = prompt("Olá, informe seu nome: ");
+   //     adress = prompt("Agora o endereço para receber seu prato: ");
+
+   // }
+}
+
 
 
 
