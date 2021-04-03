@@ -89,25 +89,25 @@ function confirmorder(){
         
         const plate = document.querySelector('.dishchoosed .main-food');
         plate.innerHTML = dishtype;
-        const price-plate = document.querySelector('.plate span:nth-of-type(2)');
-        price-plate.innerHTML = 'R$ ' + price-plate;
+        const priceplate = document.querySelector('.plate span:nth-of-type(2)');
+        priceplate.innerHTML = 'R$ ' + dishprice;
 
         const drink = document.querySelector('.drinkchoosed .main-drink');
         drink.innerHTML = drinktype;
-        const price-drink = document.querySelector('.drink span:nth-of-type(2)');
-        price-drink.innerHTML = 'R$ ' + price-drink;
+        const pricedrink = document.querySelector('.drink span:nth-of-type(2)');
+        pricedrink.innerHTML = 'R$ ' + drinkprice;
 
         const dessert = document.querySelector('.dessertchoosed .main-dessert');
         dessert.innerHTML = desserttype;
-        const price-dessert = document.querySelector('.dessert span:nth-of-type(2)');
-        price-dessert.innerHTML = 'R$ ' + price-dessert;
+        const pricedessert = document.querySelector('.dessert span:nth-of-type(2)');
+        pricedessert.innerHTML = 'R$ ' + dessertprice;
 
         const orderprice = document.querySelector('.finalprice span:nth-of-type(2)');
         cost = Number(price-plate) + Number(price-drink) + Number(price-dessert);
         orderprice.innerHTML = 'R$ ' + cost.toFixed(2);
     }
 }
-function ordercancel() {
+/*function ordercancel() {
     const embassado = document.querySelector('.fundoEmbacado');
     embassado.classList.add("oculto");
     const estatico = document.querySelector('body');
@@ -123,7 +123,7 @@ function Whats_chat() {
     const MudarLink = document.querySelector(".confirme_pedido a");
     MudarLink.href = MudarLink.href.replace('https://wa.me/?text=',"https://wa.me/5521993778424?text=" +  msg);
 }
-
+*/
 
 
 
