@@ -1,88 +1,78 @@
-
 let dishchoosed;
 let drinkchoosed;
 let dessertchoosed;
-
 let dishprice;
 let drinkprice;
 let dessertprice;
-
 let dishtype;
 let drinktype;
 let desserttype;
-
 let cost;
 
 function selectdish(plate){
-    
     const selected = document.querySelector(".dish-menu .dish-selected");
     const ic = document.querySelector(".dish-selected" + " ion-icon");
-    
-
     if(selected !== null){
         selected.classList.remove('dish-selected');
         ic.classList.replace("icon-check","hidden");
     }
-
     foodchoosed = document.querySelector(plate);
     foodchoosed.classList.add("dish-selected");
     const icon = document.querySelector(plate + " ion-icon");
     icon.classList.replace("hidden","icon-check");
-
     const meal = document.querySelector(".dish-selected .main-food");
     dishchoosed = meal.innerHTML
-
     const bill = document.querySelector(".dish-selected .price");
     dishprice = bill.innerHTML
     close_order();
 }
 
-function selectdrink(beverage){
-    
+function selectdrink(beverage){    
     const selected = document.querySelector(".drink-menu .drink-selected");
     const ic = document.querySelector(".drink-selected" + " ion-icon");
-    
-
     if(selected !== null){
         selected.classList.remove('drink-selected');
         ic.classList.replace("icon-check","hidden");
     }
-
     beveragechoosed = document.querySelector(beverage);
     beveragechoosed.classList.add("drink-selected");
     const icon = document.querySelector(beverage + " ion-icon");
     icon.classList.replace("hidden","icon-check");
-
     const meal = document.querySelector(".drink-selected .main-drink");
     drinkchoosed = meal.innerHTML
-
     const bill = document.querySelector(".drink-selected .price");
     drinkprice = bill.innerHTML
     close_order();
 }
 
-function selectdessert(sweets){
-    
+function selectdessert(sweets){ 
     const selected = document.querySelector(".dessert-menu .dessert-selected");
     const ic = document.querySelector(".dessert-selected" + " ion-icon");
-    
-
     if(selected !== null){
         selected.classList.remove('dessert-selected');
         ic.classList.replace("icon-check","hidden");
     }
-
     sweetchoosed = document.querySelector(sweets);
     sweetchoosed.classList.add("dessert-selected");
     const icon = document.querySelector(sweets + " ion-icon");
     icon.classList.replace("hidden","icon-check");
-
     const meal = document.querySelector(".dessert-selected .main-dessert");
     dessertchoosed = meal.innerHTML
-
     const bill = document.querySelector(".dessert-selected .price");
     dessertprice = bill.innerHTML
     close_order();
+}
+function close_order(){
+    const selected1 = document.querySelector(".dish-menu .dish-selected");
+    const selected2 = document.querySelector(".drink-menu .drink-selected");
+    const selected3 = document.querySelector(".dessert-menu .dessert-selected");
+
+    if(selected1 !== null && selected2 !== null && selected3 !== null){
+        
+        const waiting = document.querySelector(".shop-buttom");
+        waiting.classList.replace("waiting-buttom", "buy-buttom");
+        waiting.innerHTML = "Fechar pedido";
+    }
 }
 
 
