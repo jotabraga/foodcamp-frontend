@@ -81,6 +81,9 @@ function confirmorder(){
     if(selected !== null){
         client = prompt("Olá, informe seu nome: ");
         adress = prompt("Agora o endereço para receber seu prato: ");
+        alert(dishchoosed);
+        alert(drinkchoosed);
+        alert(dessertchoosed);
 
         const freezed = document.querySelector('.freezed-background');
         freezed.classList.remove("hidden");
