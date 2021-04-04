@@ -40,8 +40,8 @@ function selectdrink(beverage){
     beveragechoosed.classList.add("drink-selected");
     const icon = document.querySelector(beverage + " ion-icon");
     icon.classList.replace("hidden","icon-check");
-    const meal = document.querySelector(".drink-selected .main-drink");
-    drinkchoosed = meal.innerHTML
+    const liquid = document.querySelector(".drink-selected .main-drink");
+    drinkchoosed = liquid.innerHTML
     const bill = document.querySelector(".drink-selected .price");
     drinkprice = bill.innerHTML
     close_order();
@@ -57,8 +57,8 @@ function selectdessert(sweets){
     sweetchoosed.classList.add("dessert-selected");
     const icon = document.querySelector(sweets + " ion-icon");
     icon.classList.replace("hidden","icon-check");
-    const meal = document.querySelector(".dessert-selected .main-dessert");
-    dessertchoosed = meal.innerHTML
+    const candy = document.querySelector(".dessert-selected .main-dessert");
+    dessertchoosed = candy.innerHTML
     const bill = document.querySelector(".dessert-selected .price");
     dessertprice = bill.innerHTML
     close_order();
@@ -82,23 +82,21 @@ function confirmorder(){
         client = prompt("Olá, informe seu nome: ");
         adress = prompt("Agora o endereço para receber seu prato: ");
 
-        const freezed = document.querySelector('.freezed-backgroud');
+        const freezed = document.querySelector('.freezed-background');
         freezed.classList.remove("hidden");
-        //const overflowed = document.querySelector('body');
-        //overflowed.classList.add("estatico");
-        
-        const plate = document.querySelector('.dishchoosed .main-food');
-        plate.innerHTML = dishtype;
+        const overflowed = document.querySelector('body');
+        overflowed.classList.add("hide-overflow");
+        const plate = document.querySelector('.meal-review .plate');
+        plate.innerHTML = dishchoosed;
         const priceplate = document.querySelector('.plate span:nth-of-type(2)');
         priceplate.innerHTML = 'R$ ' + dishprice;
-
-        const drink = document.querySelector('.drinkchoosed .main-drink');
-        drink.innerHTML = drinktype;
+        const drink = document.querySelector('.meal-review .drinkk');
+        drink.innerHTML = drinkchoosed;
         const pricedrink = document.querySelector('.drink span:nth-of-type(2)');
         pricedrink.innerHTML = 'R$ ' + drinkprice;
 
-        const dessert = document.querySelector('.dessertchoosed .main-dessert');
-        dessert.innerHTML = desserttype;
+        const dessert = document.querySelector('.meal-review .dessert');
+        dessert.innerHTML = dessertchoosed;
         const pricedessert = document.querySelector('.dessert span:nth-of-type(2)');
         pricedessert.innerHTML = 'R$ ' + dessertprice;
 
@@ -107,11 +105,11 @@ function confirmorder(){
         orderprice.innerHTML = 'R$ ' + cost.toFixed(2);
     }
 }
-/*function ordercancel() {
-    const embassado = document.querySelector('.fundoEmbacado');
-    embassado.classList.add("oculto");
-    const estatico = document.querySelector('body');
-    estatico.classList.remove("estatico");
+function ordercancel() {
+    const freezed = document.querySelector('.freezed-background');
+    freezed.classList.add("hidden");
+    const motionless = document.querySelector('body');
+    motionless.classList.remove("hide-overflow");
 }
 function Whats_chat() {
     const Wpp_ola = "Olá, gostaria de fazer o pedido:\n"
@@ -123,7 +121,6 @@ function Whats_chat() {
     const MudarLink = document.querySelector(".confirme_pedido a");
     MudarLink.href = MudarLink.href.replace('https://wa.me/?text=',"https://wa.me/5521993778424?text=" +  msg);
 }
-*/
 
 
 
