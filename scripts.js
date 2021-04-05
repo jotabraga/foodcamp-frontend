@@ -114,17 +114,14 @@ function whats_chat() {
     - Prato: ${dishchoosed}
     - bebida: ${drinkchoosed}
     - Sobremesa: ${dessertchoosed}
-    Total: R$ ${costvalue}
-    
+    Total: R$ ${costvalue}    
     Nome: ${client}
     Endereço: ${adress}`;
-
 
     const texturi = encodeURI(text);
     const linkurl = `https://wa.me/5512988231388?text=${texturi}`;
     window.location.href = linkurl;
-    
-}
+} //finalização com msg do whatsapp
 
 
 
