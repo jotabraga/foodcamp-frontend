@@ -4,9 +4,7 @@ let dessertchoosed;
 let dishprice;
 let drinkprice;
 let dessertprice;
-let dishtype;
-let drinktype;
-let desserttype;
+
 let client;
 let adress;
 let cost;
@@ -81,30 +79,25 @@ function confirmorder(){
     if(selected !== null){
         client = prompt("Olá, informe seu nome: ");
         adress = prompt("Agora o endereço para receber seu prato: ");
-        alert(dishchoosed);
-        alert(drinkchoosed);
-        alert(dessertchoosed);
-
+        
         const freezed = document.querySelector('.freezed-background');
         freezed.classList.remove("hidden");
         const overflowed = document.querySelector('body');
         overflowed.classList.add("hide-overflow");
-        const plate = document.querySelector('.meal-review .plate');
+        const plate = document.querySelector('.meal-review .plate .ptype');
         plate.innerHTML = dishchoosed;
-        const priceplate = document.querySelector('.plate span:nth-of-type(2)');
-        priceplate.innerHTML = 'R$ ' + dishprice;
-        const drink = document.querySelector('.meal-review .drinkk');
+        const plateprice = document.querySelector('.meal-review .plate .pcost');
+        plateprice.innerHTML = 'R$ ' + dishprice;
+        const drink = document.querySelector('.meal-review .drink .dtype');
         drink.innerHTML = drinkchoosed;
-        const pricedrink = document.querySelector('.drink span:nth-of-type(2)');
+        const pricedrink = document.querySelector('.meal-review .drink .dcost');
         pricedrink.innerHTML = 'R$ ' + drinkprice;
-
-        const dessert = document.querySelector('.meal-review .dessert');
+        const dessert = document.querySelector('.meal-review .dessert .dstype');
         dessert.innerHTML = dessertchoosed;
-        const pricedessert = document.querySelector('.dessert span:nth-of-type(2)');
+        const pricedessert = document.querySelector('.meal-review .dessert .dscost');
         pricedessert.innerHTML = 'R$ ' + dessertprice;
-
-        const orderprice = document.querySelector('.finalprice span:nth-of-type(2)');
-        cost = Number(price-plate) + Number(price-drink) + Number(price-dessert);
+        const orderprice = document.querySelector('.meal-review .finalprice .stab');
+        cost = parseFloat(dishprice) + parseFloat(drinkprice) + parseFloat(dessertprice);
         orderprice.innerHTML = 'R$ ' + cost.toFixed(2);
     }
 }
@@ -114,12 +107,15 @@ function ordercancel() {
     const motionless = document.querySelector('body');
     motionless.classList.remove("hide-overflow");
 }
-function Whats_chat() {
-    const Wpp_ola = "Olá, gostaria de fazer o pedido:\n"
-    const Wpp_pedido = " - Prato: " + tipoPrato + "\n - Bebida: " + tipoBebida + "\n - Sobremesa: " + tipoSobremesa;
-    const valor_total = "\nTotal: R$ " + valor.toFixed(2);
-    const dados_cliente = "\n \nNome: " + nome + "\nEndereço: " + endereço;
-    const msg = encodeURIComponent(Wpp_ola + Wpp_pedido + valor_total + dados_cliente);
+function whats_chat() {
+    
+    
+    
+    const whats_init = "Olá, gostaria de fazer o pedido:\n"
+    const whats_order = " - Prato: " + dishchoosed + "\n - Bebida: " + drinkchoosed + "\n - Sobremesa: " + dessertchoosed;
+    const total_price = "\nTotal: R$ " + cost.toFixed(2);
+    const client_data = "\n \nNome: " + client + "\nEndereço: " + adress;
+    const msg = encodeURIComponent(whats_init + whats_order + total_price + client_data);
 
     const MudarLink = document.querySelector(".confirme_pedido a");
     MudarLink.href = MudarLink.href.replace('https://wa.me/?text=',"https://wa.me/5521993778424?text=" +  msg);

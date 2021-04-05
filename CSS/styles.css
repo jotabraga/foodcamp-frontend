@@ -3,7 +3,7 @@
 .righteous-letter{
     font-family: "Righteous";
 }
-.small-letter, .main-food, .price{
+.small-letter, .main-food, .price, .prices{
     font-size: 16px;
 }
 .medium-letter{
@@ -70,7 +70,7 @@ body{
     height: 216px;
     width: 100%;
     display: flex;
-    overflow-y: hidden;
+    overflow-x: scroll;
 }
 .dishes1, .dishes2, .dishes3, .dishes4, .drinks1, .drinks2, .drinks3, .drinks4, .desserts1, .desserts2, .desserts3, .desserts4{
     height: 216px;
@@ -131,16 +131,20 @@ img{
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    padding-left: 80px;
+    padding-right: 80px;
 }
 .buy-buttom{
     background: #32b72f;
     font-weight: 700;
+    padding-left: 110px;
+   
 }
 .waiting-buttom{
     background: #cbcbcb;
 }
 .dish-selected, .drink-selected, .dessert-selected{
-    border: 2px green solid;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), inset 0 0 0 5px #32b72f;
 }
 .meal-review {
     position: fixed;
@@ -159,6 +163,17 @@ img{
     padding: 20px 10px 10px 10px;
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
 }
+.prices{
+    display: flex;
+    width: auto;
+}
+.meal-review div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 5px 0px;
+}
 .freezed-background{
     position: fixed;
     top: 0;
@@ -171,3 +186,4 @@ img{
 .hide-overflow{
     overflow: hidden;
 }
+
