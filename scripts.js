@@ -4,7 +4,7 @@ let dessertchoosed;
 let dishprice;
 let drinkprice;
 let dessertprice;
-
+let text;
 let client;
 let adress;
 let cost;
@@ -107,18 +107,25 @@ function ordercancel() {
     const motionless = document.querySelector('body');
     motionless.classList.remove("hide-overflow");
 }
-function whats_chat() {
+function whats_chat() {   
     
+    let costvalue = cost.toFixed(2);
     
+    let text = 
+    `Olá, gostaria de fazer o pedido:
+    - Prato: ${dishchoosed}
+    - bebida: ${drinkchoosed}
+    - Sobremesa: ${dessertchoosed}
+    Total: R$ ${costvalue}
     
-    const whats_init = "Olá, gostaria de fazer o pedido:\n"
-    const whats_order = " - Prato: " + dishchoosed + "\n - Bebida: " + drinkchoosed + "\n - Sobremesa: " + dessertchoosed;
-    const total_price = "\nTotal: R$ " + cost.toFixed(2);
-    const client_data = "\n \nNome: " + client + "\nEndereço: " + adress;
-    const msg = encodeURIComponent(whats_init + whats_order + total_price + client_data);
+    Nome: ${client}
+    Endereço: ${adress}`;
 
-    const MudarLink = document.querySelector(".confirme_pedido a");
-    MudarLink.href = MudarLink.href.replace('https://wa.me/?text=',"https://wa.me/5521993778424?text=" +  msg);
+
+    const texturi = encodeURI(text);
+    const linkurl = `https://wa.me/5512988231388?text=${texturi}`;
+    window.location.href = linkurl;
+    
 }
 
 
