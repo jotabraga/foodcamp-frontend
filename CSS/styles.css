@@ -66,11 +66,24 @@ body{
     margin-top: 27px;
     font-size: 26px;
 }
+
 .dish-menu, .drink-menu, .dessert-menu{
     height: 216px;
     width: 100%;
+    display: flex;   
+    justify-content: center; 
+}
+.food-box{
+    height: auto;
+    width: 100%;
     display: flex;
-    overflow-x: scroll;
+    flex-direction: column;
+    align-items: center;
+}
+@media (max-width: 600px) {
+    .dish-menu, .drink-menu, .dessert-menu{
+      overflow-x: scroll;
+    }    
 }
 .dishes1, .dishes2, .dishes3, .dishes4, .drinks1, .drinks2, .drinks3, .drinks4, .desserts1, .desserts2, .desserts3, .desserts4{
     height: 216px;
