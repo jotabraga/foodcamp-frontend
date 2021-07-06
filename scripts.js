@@ -1,9 +1,9 @@
-let dishchoosed;
-let drinkchoosed;
-let dessertchoosed;
-let dishprice;
-let drinkprice;
-let dessertprice;
+let dishChoosed;
+let drinkChoosed;
+let dessertChoosed;
+let dishPrice;
+let drinkPrice;
+let dessertPrice;
 let client;
 let adress;
 let cost;
@@ -12,24 +12,24 @@ function selectdish(plate){
     const selected = document.querySelector(".dish-menu .dish-selected");
     const ic = document.querySelector(".dish-selected" + " ion-icon");
     if(selected !== null){
-        selected.classList.remove('dish-selected');     //antes de selecionar o prato ele limpa qualquer seleção
-        ic.classList.replace("icon-check","hidden");    //e limpa a seleção do icone 
+        selected.classList.remove('dish-selected');     
+        ic.classList.replace("icon-check","hidden");    
     }
     foodchoosed = document.querySelector(plate);
-    foodchoosed.classList.add("dish-selected");     //add a classe de seleção ao prato selecionado
+    foodchoosed.classList.add("dish-selected");     
     const icon = document.querySelector(plate + " ion-icon");
-    icon.classList.replace("hidden","icon-check");      //Troca a classe do icone pra ficar visivel
+    icon.classList.replace("hidden","icon-check");      
     const meal = document.querySelector(".dish-selected .main-food");
-    dishchoosed = meal.innerHTML        //atribui o nome do prato a variavel global do prato escolhido
+    dishChoosed = meal.innerHTML        
     const bill = document.querySelector(".dish-selected .price");
-    dishprice = bill.innerHTML //atribui o valor do prato a variavel global preço do prato
+    dishPrice = bill.innerHTML 
     close_order();
 }
 
 function selectdrink(beverage){    
-    const selected = document.querySelector(".drink-menu .drink-selected"); //a logica pra bebida e sobremesa
-    const ic = document.querySelector(".drink-selected" + " ion-icon"); //segue a mesma linha de 
-    if(selected !== null){                                              //raciocinio da classe do prato
+    const selected = document.querySelector(".drink-menu .drink-selected");
+    const ic = document.querySelector(".drink-selected" + " ion-icon"); 
+    if(selected !== null){                                              
         selected.classList.remove('drink-selected');
         ic.classList.replace("icon-check","hidden");
     }
@@ -38,9 +38,9 @@ function selectdrink(beverage){
     const icon = document.querySelector(beverage + " ion-icon");
     icon.classList.replace("hidden","icon-check");
     const liquid = document.querySelector(".drink-selected .main-drink");
-    drinkchoosed = liquid.innerHTML
+    drinkChoosed = liquid.innerHTML
     const bill = document.querySelector(".drink-selected .price");
-    drinkprice = bill.innerHTML
+    drinkPrice = bill.innerHTML
     close_order();
 }
 function selectdessert(sweets){ 
@@ -55,9 +55,9 @@ function selectdessert(sweets){
     const icon = document.querySelector(sweets + " ion-icon");
     icon.classList.replace("hidden","icon-check");
     const candy = document.querySelector(".dessert-selected .main-dessert");
-    dessertchoosed = candy.innerHTML
+    dessertChoosed = candy.innerHTML
     const bill = document.querySelector(".dessert-selected .price");
-    dessertprice = bill.innerHTML
+    dessertPrice = bill.innerHTML
     close_order();
 }
 function close_order(){
@@ -83,19 +83,19 @@ function confirmorder(){
         const overflowed = document.querySelector('body');              //confirmar o pedido
         overflowed.classList.add("hide-overflow");          //pega os dados e coloca na div para o 
         const plate = document.querySelector('.meal-review .plate .ptype'); //cliente confirmar os 
-        plate.innerHTML = dishchoosed;                                      //dados e fechar ou cancelar
+        plate.innerHTML = dishChoosed;                                      //dados e fechar ou cancelar
         const plateprice = document.querySelector('.meal-review .plate .pcost'); //o pedido
-        plateprice.innerHTML = 'R$ ' + dishprice;
+        plateprice.innerHTML = 'R$ ' + dishPrice;
         const drink = document.querySelector('.meal-review .drink .dtype');
-        drink.innerHTML = drinkchoosed;
+        drink.innerHTML = drinkChoosed;
         const pricedrink = document.querySelector('.meal-review .drink .dcost');
-        pricedrink.innerHTML = 'R$ ' + drinkprice;
+        pricedrink.innerHTML = 'R$ ' + drinkPrice;
         const dessert = document.querySelector('.meal-review .dessert .dstype');
-        dessert.innerHTML = dessertchoosed;
+        dessert.innerHTML = dessertChoosed;
         const pricedessert = document.querySelector('.meal-review .dessert .dscost');
-        pricedessert.innerHTML = 'R$ ' + dessertprice;
+        pricedessert.innerHTML = 'R$ ' + dessertPrice;
         const orderprice = document.querySelector('.meal-review .finalprice .stab');
-        cost = parseFloat(dishprice) + parseFloat(drinkprice) + parseFloat(dessertprice);
+        cost = parseFloat(dishPrice) + parseFloat(drinkprice) + parseFloat(dessertPrice);
         orderprice.innerHTML = 'R$ ' + cost.toFixed(2);
     }
 }
@@ -111,9 +111,9 @@ function whats_chat() {
     
     let text =                          //se estiver de acordo abre a conversa no whatsapp
     `Olá, gostaria de fazer o pedido:
-    - Prato: ${dishchoosed}
-    - bebida: ${drinkchoosed}
-    - Sobremesa: ${dessertchoosed}
+    - Prato: ${dishChoosed}
+    - bebida: ${drinkChoosed}
+    - Sobremesa: ${dessertChoosed}
     Total: R$ ${costvalue}    
     Nome: ${client}
     Endereço: ${adress}`;
