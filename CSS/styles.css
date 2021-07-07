@@ -156,7 +156,7 @@ img{
 .waiting-buttom{
     background: #cbcbcb;
 }
-.dish-selected, .drink-selected, .dessert-selected{
+.selected{
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), inset 0 0 0 5px #32b72f;
 }
 .meal-review {
